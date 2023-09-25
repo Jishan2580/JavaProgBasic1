@@ -1,26 +1,27 @@
-
-    class Answer{
-	Answer(){
-		System.out.println("You got nothing.");
-	}
-	Answer(int marks, String type){	
-      this();
-		System.out.println("you got "+marks+" for an "+ type);
-	}
+class A{
+    int t=2002;
+    void display(){
+        System.out.println("A's method is called");
+    }
 }
-public class Myfirstjavap {
+class B extends A{
+    int t=403;
+    void display(){
+        System.out.println("B's method is called");
+    }
+}
+
+class Myfirstjavap {
+
 
     public static void main(String[] args) {
-        int a[] = new int[4];
-        a=new int[6];
-        int b[]={1,2,3,4,5};
-        System.out.println(b[2]);
-        Answer obj= new Answer(10,"jishan");
-        String nptel,space ;
-        nptel="jishan";
-        space= "shaikh";
-        System.out.println(nptel + space); 
-
+        A a = new B();
+        a.display();
+        ((B) a).display();
+        B b=new B();
+        System.out.println(a.t);/*in java variable is accesed through referenced type not object type
+        so even a is object of class B but it is reference to A class so here A's variable is accessed */ 
+        System.out.println(b.t);
         
         }
     }
